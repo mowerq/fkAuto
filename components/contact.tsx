@@ -16,20 +16,18 @@ export default function Contact() {
     message: "",
   })
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // In a real application, you would handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" })
-    // Show success message
-    alert("Mesajınız için teşekkürler! En kısa sürede size geri döneceğiz.")
-  }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+  
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", phone: "", message: "" });
+    alert("Mesajınız için teşekkürler! En kısa sürede size geri döneceğiz.");
+  };
+  
 
   return (
     <section id="contact" className="py-20">
@@ -114,14 +112,14 @@ export default function Contact() {
                   <MapPin className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <h4 className="font-medium">Adres</h4>
-                    <p className="text-muted-foreground">Kaplama Caddesi No: 123, Otomotiv Mahallesi, İstanbul</p>
+                    <p className="text-muted-foreground">FK Auto Caddesi No: 123, FK Auto Mahallesi, Samsun</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <h4 className="font-medium">Telefon</h4>
-                    <p className="text-muted-foreground">(0212) 456 7890</p>
+                    <p className="text-muted-foreground">+90 531 434 16 04</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

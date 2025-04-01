@@ -23,7 +23,7 @@ export default function Navbar() {
             alt="FK Auto Logo"
             width={40}
             height={40}
-            className="h-10 w-auto"
+            className="h-10 w-auto bg-transparent fill-primary"
           />
           <span className="hidden text-xl font-bold text-primary sm:inline-block">FK Auto</span>
         </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
               alt="FK Auto Logo"
               width={40}
               height={40}
-              className="h-10 w-auto"
+              className="h-10 w-auto bg-transparent"
             />
             <span className="text-xl font-bold text-primary">FK Auto</span>
           </Link>

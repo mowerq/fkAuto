@@ -26,7 +26,7 @@ export default function Footer() {
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
+              <Link href="https://www.instagram.com/fk__auto/" className="text-muted-foreground hover:text-primary">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
@@ -106,9 +106,9 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">İletişim</h3>
             <address className="not-italic text-muted-foreground">
-              <p className="mb-2">Kaplama Caddesi No: 123</p>
-              <p className="mb-2">Otomotiv Mahallesi, İstanbul</p>
-              <p className="mb-2">Telefon: (0212) 456 7890</p>
+              <p className="mb-2">FK Auto Caddesi No: 123</p>
+              <p className="mb-2">FK Auto Mahallesi, Samsun</p>
+              <p className="mb-2">Telefon: +90 531 434 16 04</p>
               <p className="mb-4">E-posta: info@fkauto.com</p>
             </address>
             <p className="text-sm text-muted-foreground">Çalışma Saatleri: Pzt-Cuma 09:00-18:00, Cmt 10:00-16:00</p>
