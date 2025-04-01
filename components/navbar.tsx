@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design_2_optimized-UL7OG9rq4lCG6xMwQJLGeAzQw1Mvy8.png"
+            src="/fkAuto_logo_noBG.png"
             alt="FK Auto Logo"
             width={40}
             height={40}
@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between border-b border-gray-800 bg-black px-4">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design_2_optimized-UL7OG9rq4lCG6xMwQJLGeAzQw1Mvy8.png"
+              src="/fkAuto_logo_noBG.png"
               alt="FK Auto Logo"
               width={40}
               height={40}
