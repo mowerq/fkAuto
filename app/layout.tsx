@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   title: "FK Auto - Premium Araç Kaplama Hizmetleri",
   description:
     "Profesyonel araç kaplama hizmetleriyle aracınızı dönüştürün. Renk değişimleri, özel tasarımlar ve boya koruma filmi uzman montajıyla.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
