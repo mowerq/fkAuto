@@ -59,7 +59,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       <div className={cn("fixed inset-0 z-50 bg-black text-white md:hidden", isMenuOpen ? "flex flex-col" : "hidden")}>
-        <div className="flex h-16 items-center justify-between border-b border-gray-800 bg-black px-4">
+        <div className="flex h-16 items-center justify-between border-b border-gray-800 bg-black p-4">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/fkAuto_logo_noBG.png"
