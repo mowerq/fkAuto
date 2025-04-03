@@ -62,9 +62,9 @@ export default function Navbar() {
             İletişim
           </Link>
           <ThemeToggle />
-          <Button variant="default" size="sm">
+          <Link href="#contact"><Button variant="default" size="sm">
             Teklif Al
-          </Button>
+          </Button></Link>
         </nav>
 
         {/* Mobile Menu Button */}
