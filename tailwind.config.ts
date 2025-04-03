@@ -26,7 +26,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#ff3131", // Yeni logo kırmızısı
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

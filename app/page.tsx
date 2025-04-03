@@ -6,6 +6,7 @@ import Process from "@/components/process"
 import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
+import About from "@/components/about"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+      <About />
       <Gallery />
       <Process />
       <Testimonials />

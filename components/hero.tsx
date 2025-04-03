@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-black py-20 md:py-32">
+    <section className="relative overflow-hidden bg-black py-20 md:py-32 dark:bg-black">
       <div className="absolute inset-0 z-0 opacity-40">
         <video
           autoPlay
@@ -16,18 +16,25 @@ export default function Hero() {
       </div>
       <div className="container relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            Premium <span className="text-primary">Araç Kaplama</span> Hizmetleri
+          <div className="mx-auto mb-8 w-64">
+            <Image src="/logo.png" alt="FK Auto Logo" width={300} height={150} className="w-full h-auto" />
+          </div>
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl dark:text-white">
+            <span className="text-primary">Araç Estetik</span> Merkezi
           </h1>
-          <p className="mb-8 text-lg text-gray-300 md:text-xl">
-            Aracınızı profesyonel vinil kaplama hizmetlerimizle dönüştürün. Özel tasarımlar, renk değişimleri ve koruma
-            filmleri uzman montajıyla.
+          <p className="mb-8 text-lg text-gray-300 md:text-xl dark:text-gray-300">
+            Aracınızı profesyonel kaplama ve estetik hizmetlerimizle dönüştürün. Özel tasarımlar, renk değişimleri ve
+            koruma filmleri uzman montajıyla.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" className="w-full sm:w-auto">
               Çalışmalarımızı Görün
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto">
+            <Button
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto"
+            >
               Teklif Alın
             </Button>
           </div>
