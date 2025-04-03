@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -27,16 +28,16 @@ export default function Hero() {
             koruma filmleri uzman montajıyla.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button size="lg" className="w-full sm:w-auto">
+            <Link href="#gallery"><Button size="lg" className="w-full sm:w-auto">
               Çalışmalarımızı Görün
-            </Button>
-            <Button
+            </Button></Link>
+            <Link href="#contact"><Button
               size="lg"
               variant="outline"
               className="w-full sm:w-auto"
             >
               Teklif Alın
-            </Button>
+            </Button></Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
+import Link from "next/link"
 
 export default function About() {
   return (
@@ -23,8 +24,8 @@ export default function About() {
               <span className="font-medium">+90 531 434 16 04</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button>Daha Fazla Bilgi</Button>
-              <Button variant="outline">İletişime Geçin</Button>
+              <Link href="#contact"> <Button>Daha Fazla Bilgi</Button></Link>
+              <Link href="#contact"><Button variant="outline">İletişime Geçin</Button></Link>
             </div>
           </div>
           <div className="order-1 md:order-2 relative aspect-square rounded-lg overflow-hidden">

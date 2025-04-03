@@ -231,17 +231,7 @@ export default function Contact() {
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle>Teklif Alın</CardTitle>
-                <CardDescription>Araç kaplamanız için kişiselleştirilmiş teklif isteyin</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Belirli bir hizmet mi arıyorsunuz veya aklınızda özel bir proje mi var? İhtiyaçlarınıza göre
-                  özelleştirilmiş detaylı bir teklif için bizimle iletişime geçin.
-                </p>
-                <Button className="w-full">Teklif İsteyin</Button>
-              </CardContent>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11996.44475527692!2d36.3377416!3d41.2629149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4087d89c807d8ebf%3A0x27b584c2aa3ed9bb!2zRGVyZWJhaMOnZSwgR8O8bcO8xZ9lxZ9payBTayBObzozLzEsIDU1MDYwIMSwbGthZMSxbS9TYW1zdW4!5e0!3m2!1sen!2str!4v1743682981514!5m2!1sen!2str" width="100%" height="250" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </Card>
           </div>
         </div>
