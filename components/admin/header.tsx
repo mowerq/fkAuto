@@ -25,7 +25,7 @@ export function AdminHeader() {
       const {
         data: { user },
       } = await supabase.auth.getUser()
-      setUser(user)
+      setUser(user as any)
     }
 
     getUser()
@@ -38,13 +38,13 @@ export function AdminHeader() {
   }
 
   return (
-    <header className="flex h-14 items-center gap-4 border-b bg-card px-6">
-      <div className="flex-1">
+    <header className="sticky top-0 z-20 flex h-14 items-center gap-4 border-b bg-card px-6 lg:pl-72">
+      <div className="flex-1 pl-10 lg:pl-0">
         <h1 className="text-lg font-semibold">FK Auto Admin Panel</h1>
       </div>
       <div className="flex items-center gap-2">
         <ThemeToggle />
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="hidden md:flex">
           <Bell className="h-5 w-5" />
           <span className="sr-only">Bildirimler</span>
         </Button>

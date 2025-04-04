@@ -12,10 +12,19 @@ import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
 import { getSupabaseClient } from "@/lib/supabase/client"
 
+// Define the types for form data
+interface FormData {
+  title: string
+  description: string
+  icon: string
+  displayOrder: number
+  isActive: boolean
+}
+
 export default function NewServicePage() {
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     title: "",
     description: "",
     icon: "circle",
@@ -43,17 +52,14 @@ export default function NewServicePage() {
     checkAuth()
   }, [router, supabase])
 
-  // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target
-    // Handle different types of inputs (checkbox vs text inputs)
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }))
   }
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
@@ -63,7 +69,7 @@ export default function NewServicePage() {
         title: formData.title,
         description: formData.description,
         icon: formData.icon,
-        display_order: Number.parseInt(formData.displayOrder.toString()) || 0,
+        display_order: formData.displayOrder || 0,
         is_active: formData.isActive,
       })
 
@@ -83,13 +89,13 @@ export default function NewServicePage() {
   }
 
   return (
-    <div className="flex h-screen bg-background">
-      <AdminSidebar />
-      <div className="flex flex-1 flex-col">
-        <AdminHeader />
-        <main className="flex-1 overflow-auto p-6">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight">Yeni Hizmet Ekle</h2>
+    <div className="flex min-h-screen flex-col bg-background">
+      <AdminHeader />
+      <div className="flex flex-1">
+        <AdminSidebar />
+        <main className="flex-1 overflow-auto p-4 pt-0 lg:p-6 lg:pl-72">
+          <div className="mb-6 mt-6">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Yeni Hizmet Ekle</h2>
             <p className="text-muted-foreground">Sunduğunuz hizmetlere yeni bir hizmet ekleyin.</p>
           </div>
 
@@ -162,12 +168,12 @@ export default function NewServicePage() {
                   </div>
                 </div>
 
-                <div className="flex gap-2">
-                  <Button type="submit" disabled={submitting}>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Button type="submit" disabled={submitting} className="w-full sm:w-auto">
                     {submitting ? "Kaydediliyor..." : "Kaydet"}
                   </Button>
-                  <Link href="/admin/services">
-                    <Button variant="outline" type="button">
+                  <Link href="/admin/services" className="w-full sm:w-auto">
+                    <Button variant="outline" type="button" className="w-full">
                       İptal
                     </Button>
                   </Link>

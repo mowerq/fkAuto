@@ -10,112 +10,98 @@ import { Trash2, MailOpen } from "lucide-react"
 import { formatDistanceToNow } from "date-fns"
 import { tr } from "date-fns/locale"
 
-// Define the Message type
-type Message = {
+// Type definition for messages
+interface Message {
   id: number
   name: string
   email: string
   phone: string | null
   message: string
-  is_read: boolean
   created_at: string
+  is_read: boolean
 }
 
 export default function MessagesPage() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState<boolean>(true)
   const [messages, setMessages] = useState<Message[]>([])
-  const [error, setError] = useState<string | null>(null) // For error messages
   const router = useRouter()
   const supabase = getSupabaseClient()
 
   useEffect(() => {
-    async function fetchMessages() {
-      try {
-        const {
-          data: { session },
-        } = await supabase.auth.getSession()
+    async function fetchData() {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession()
 
-        if (!session) {
-          router.push("/admin/login")
-          return
-        }
-
-        const { data, error } = await supabase
-          .from("contact_messages")
-          .select("*")
-          .order("created_at", { ascending: false })
-
-        if (error) throw error
-
-        setMessages(data || [])
-      } catch (err) {
-        setError("Mesajlar yüklenirken bir hata oluştu.")
-        console.error(err)
-      } finally {
-        setLoading(false)
+      if (!session) {
+        router.push("/admin/login")
+        return
       }
+
+      // Fetch messages
+      const { data } = await supabase
+        .from("contact_messages")
+        .select("*")
+        .order("created_at", { ascending: false })
+
+      setMessages(data || [])
+      setLoading(false)
     }
 
-    fetchMessages()
+    fetchData()
   }, [router, supabase])
 
   const handleMarkAsRead = async (id: number) => {
     try {
       const { error } = await supabase
         .from("contact_messages")
-        .update({ is_read: true })
+        .update({
+          is_read: true,
+        })
         .eq("id", id)
 
       if (error) throw error
 
-      // Update UI efficiently
+      // Update the UI
       setMessages((prevMessages) =>
         prevMessages.map((message) =>
           message.id === id ? { ...message, is_read: true } : message
         )
       )
     } catch (error) {
-      setError("Okundu olarak işaretleme işlemi başarısız oldu.")
-      console.error(error)
+      console.error("Error marking message as read:", error)
+      alert("İşlem başarısız oldu.")
     }
   }
 
   const handleDelete = async (id: number) => {
-    if (window.confirm("Bu mesajı silmek istediğinizden emin misiniz?")) {
-      try {
-        const { error } = await supabase.from("contact_messages").delete().eq("id", id)
+    try {
+      const { error } = await supabase.from("contact_messages").delete().eq("id", id)
 
-        if (error) throw error
+      if (error) throw error
 
-        // Remove the message from UI
-        setMessages((prevMessages) => prevMessages.filter((message) => message.id !== id))
-      } catch (error) {
-        setError("Silme işlemi başarısız oldu.")
-        console.error(error)
-      }
+      // Update the UI
+      setMessages((prevMessages) => prevMessages.filter((message) => message.id !== id))
+    } catch (error) {
+      console.error("Error deleting message:", error)
+      alert("Silme işlemi başarısız oldu.")
     }
   }
 
   if (loading) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <span className="text-lg">Yükleniyor...</span>
-      </div>
-    )
+    return <div className="flex h-screen items-center justify-center">Yükleniyor...</div>
   }
 
   return (
-    <div className="flex h-screen bg-background">
-      <AdminSidebar />
-      <div className="flex flex-1 flex-col">
-        <AdminHeader />
-        <main className="flex-1 overflow-auto p-6">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight">Mesajlar</h2>
+    <div className="flex min-h-screen flex-col bg-background">
+      <AdminHeader />
+      <div className="flex flex-1">
+        <AdminSidebar />
+        <main className="flex-1 overflow-auto p-4 pt-0 lg:p-6 lg:pl-72">
+          <div className="mb-6 mt-6">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Mesajlar</h2>
             <p className="text-muted-foreground">İletişim formundan gelen mesajları görüntüleyin.</p>
           </div>
-
-          {error && <div className="text-red-500 mb-4">{error}</div>} {/* Error display */}
 
           {messages.length === 0 ? (
             <div className="flex flex-col items-center justify-center rounded-lg border border-dashed p-8 text-center">
@@ -131,9 +117,9 @@ export default function MessagesPage() {
                   key={message.id}
                   className={`rounded-lg border p-4 ${message.is_read ? "bg-card" : "bg-primary/5 border-primary/20"}`}
                 >
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
                     <div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <h3 className="font-semibold">{message.name}</h3>
                         {!message.is_read && (
                           <span className="rounded-full bg-primary px-2 py-0.5 text-xs text-white">Yeni</span>
@@ -151,12 +137,12 @@ export default function MessagesPage() {
                     </div>
                   </div>
                   <div className="mt-2">{message.message}</div>
-                  <div className="mt-4 flex justify-end gap-2">
+                  <div className="mt-4 flex flex-col sm:flex-row justify-end gap-2">
                     {!message.is_read && (
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex items-center gap-1"
+                        className="flex items-center gap-1 w-full sm:w-auto"
                         onClick={() => handleMarkAsRead(message.id)}
                       >
                         <MailOpen className="h-3 w-3" />
@@ -166,7 +152,7 @@ export default function MessagesPage() {
                     <Button
                       variant="destructive"
                       size="sm"
-                      className="flex items-center gap-1"
+                      className="flex items-center gap-1 w-full sm:w-auto"
                       onClick={() => handleDelete(message.id)}
                     >
                       <Trash2 className="h-3 w-3" />

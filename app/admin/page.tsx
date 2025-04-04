@@ -65,13 +65,13 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="flex h-screen bg-background">
-      <AdminSidebar />
-      <div className="flex flex-1 flex-col">
-        <AdminHeader />
-        <main className="flex-1 overflow-auto p-6">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+    <div className="flex min-h-screen flex-col bg-background">
+      <AdminHeader />
+      <div className="flex flex-1">
+        <AdminSidebar />
+        <main className="flex-1 overflow-auto p-4 pt-0 lg:p-6 lg:pl-72">
+          <div className="mb-8 mt-6">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Dashboard</h2>
             <p className="text-muted-foreground">FK Auto web sitesi yönetim paneline hoş geldiniz.</p>
           </div>
 
@@ -122,11 +122,11 @@ export default function AdminDashboard() {
           </div>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="col-span-2">
+            <Card className="col-span-full lg:col-span-2">
               <CardHeader>
                 <CardTitle>Hızlı Erişim</CardTitle>
               </CardHeader>
-              <CardContent className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <CardContent className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <a
                   href="/admin/gallery"
                   className="flex flex-col items-center justify-center rounded-lg border border-dashed p-4 text-center hover:bg-accent"
@@ -151,7 +151,7 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="col-span-full lg:col-span-1">
               <CardHeader>
                 <CardTitle>Yardım</CardTitle>
               </CardHeader>
