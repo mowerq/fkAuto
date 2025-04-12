@@ -116,11 +116,11 @@ export default function TestimonialsPage() {
   }
 
   return (
-    <div className="flex h-screen bg-background">
-      <AdminSidebar />
-      <div className="flex flex-1 flex-col">
-        <AdminHeader />
-        <main className="flex-1 overflow-auto p-6">
+    <div className="flex min-h-screen flex-col bg-background">
+      <AdminHeader />
+      <div className="flex flex-1">
+        <AdminSidebar />
+        <main className="flex-1 overflow-auto p-6 lg:pl-72">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-3xl font-bold tracking-tight">Müşteri Yorumları</h2>

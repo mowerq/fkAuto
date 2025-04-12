@@ -35,11 +35,6 @@ const navItems = [
     icon: MessageSquare,
   },
   {
-    title: "İçerik",
-    href: "/admin/content",
-    icon: FileText,
-  },
-  {
     title: "Ayarlar",
     href: "/admin/settings",
     icon: Settings,

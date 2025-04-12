@@ -34,10 +34,10 @@ export default function Footer() {
     workingHoursWeekday: "09:00 - 18:00",
     workingHoursSaturday: "10:00 - 16:00",
     workingHoursSunday: "Kapalı",
-    facebook: "https://facebook.com/",
+    facebook: "",
     instagram: "https://instagram.com/",
-    twitter: "https://twitter.com/",
-    youtube: "https://youtube.com/",
+    twitter: "",
+    youtube: "",
   })
   
   const [services, setServices] = useState<Service[]>([])

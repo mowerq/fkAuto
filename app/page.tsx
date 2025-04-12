@@ -7,10 +7,13 @@ import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import About from "@/components/about"
+import StructuredData from "@/components/structured-data"
+import LocalSEO from "@/components/local-seo"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <StructuredData />
       <Navbar />
       <Hero />
       <Services />
@@ -20,6 +23,7 @@ export default function Home() {
       <Testimonials />
       <Contact />
       <Footer />
+      <LocalSEO />
     </main>
   )
 }
