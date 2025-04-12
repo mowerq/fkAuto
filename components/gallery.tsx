@@ -5,8 +5,16 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+interface GalleryItem {
+  id: number
+  category: string
+  title: string
+  image_url: string
+  description: string
+}
+
 export default function Gallery() {
-  const [galleryItems, setGalleryItems] = useState([])
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([])
   const [loading, setLoading] = useState(true)
 
   const categories = [
@@ -127,7 +135,7 @@ export default function Gallery() {
           <div className="mb-8 flex justify-center">
             <TabsList>
               {categories.map((category) => (
-                <TabsTrigger key={category.id} value={category.id}>
+                <TabsTrigger key={category.id} value={category.id} className="text-xs">
                   {category.label}
                 </TabsTrigger>
               ))}
@@ -159,7 +167,7 @@ export default function Gallery() {
   )
 }
 
-function GalleryItem({ item }) {
+function GalleryItem({ item }: { item: GalleryItem }) {
   return (
     <Card className="overflow-hidden">
       <CardContent className="p-0">

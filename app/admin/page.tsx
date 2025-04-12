@@ -10,6 +10,10 @@ import { getSupabaseClient } from "@/lib/supabase/client"
 
 export default function AdminDashboard() {
   const [loading, setLoading] = useState(true)
+  const [visitorStats, setVisitorStats] = useState({
+    dailyVisitors: 0,
+    totalVisitors: 0,
+  })
   const [stats, setStats] = useState({
     galleryCount: 0,
     servicesCount: 0,
@@ -21,44 +25,63 @@ export default function AdminDashboard() {
   const supabase = getSupabaseClient()
 
   useEffect(() => {
-    async function checkAuth() {
+    async function checkAuthAndFetchStats() {
       const {
         data: { session },
       } = await supabase.auth.getSession()
-
+  
       if (!session) {
         router.push("/admin/login")
         return
       }
-
-      // Fetch counts for dashboard
-      const [
-        { count: galleryCount },
-        { count: servicesCount },
-        { count: testimonialsCount },
-        { count: messagesCount },
-        { count: unreadMessagesCount },
-      ] = await Promise.all([
-        supabase.from("gallery").select("*", { count: "exact", head: true }),
-        supabase.from("services").select("*", { count: "exact", head: true }),
-        supabase.from("testimonials").select("*", { count: "exact", head: true }),
-        supabase.from("contact_messages").select("*", { count: "exact", head: true }),
-        supabase.from("contact_messages").select("*", { count: "exact", head: true }).eq("is_read", false),
-      ])
-
-      setStats({
-        galleryCount: galleryCount || 0,
-        servicesCount: servicesCount || 0,
-        testimonialsCount: testimonialsCount || 0,
-        messagesCount: messagesCount || 0,
-        unreadMessagesCount: unreadMessagesCount || 0,
-      })
-
-      setLoading(false)
+  
+      try {
+        // 1. Fetch visitor stats
+        console.info("Fetching visitor stats...")
+        const visitorRes = await fetch("/api/visitor/stats")
+        const visitorJson = await visitorRes.json()
+        console.info("Visitor stats:", visitorJson)
+  
+        if (visitorJson.success) {
+          setVisitorStats({
+            dailyVisitors: visitorJson.dailyVisitors || 0,
+            totalVisitors: visitorJson.totalVisitors || 0,
+          })
+        }
+  
+        // 2. Fetch other counts from Supabase
+        const [
+          { count: galleryCount },
+          { count: servicesCount },
+          { count: testimonialsCount },
+          { count: messagesCount },
+          { count: unreadMessagesCount },
+        ] = await Promise.all([
+          supabase.from("gallery").select("*", { count: "exact", head: true }),
+          supabase.from("services").select("*", { count: "exact", head: true }),
+          supabase.from("testimonials").select("*", { count: "exact", head: true }),
+          supabase.from("contact_messages").select("*", { count: "exact", head: true }),
+          supabase.from("contact_messages").select("*", { count: "exact", head: true }).eq("is_read", false),
+        ])
+  
+        setStats({
+          galleryCount: galleryCount || 0,
+          servicesCount: servicesCount || 0,
+          testimonialsCount: testimonialsCount || 0,
+          messagesCount: messagesCount || 0,
+          unreadMessagesCount: unreadMessagesCount || 0,
+        })
+      } catch (err) {
+        console.error("Error fetching admin stats:", err)
+      } finally {
+        setLoading(false)
+      }
     }
-
-    checkAuth()
+  
+    checkAuthAndFetchStats()
   }, [router, supabase])
+  
+  
 
   if (loading) {
     return <div className="flex h-screen items-center justify-center">Yükleniyor...</div>
@@ -76,6 +99,21 @@ export default function AdminDashboard() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+                <CardTitle className="text-sm font-medium">Ziyaretçi Sayısı</CardTitle>
+                <Users className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{visitorStats.dailyVisitors}</div>
+                <p className="text-xs text-muted-foreground">Bugünkü Ziyaretçiler</p>
+              </CardContent>
+              <CardContent>
+                <div className="text-2xl font-bold">{visitorStats.totalVisitors}</div>
+                <p className="text-xs text-muted-foreground">Toplam Ziyaretçi</p>
+              </CardContent>
+            </Card>
+
             <Card>
               <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
                 <CardTitle className="text-sm font-medium">Galeri Öğeleri</CardTitle>

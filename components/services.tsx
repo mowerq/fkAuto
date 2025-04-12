@@ -5,7 +5,7 @@ import { Circle } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Services() {
-  const [services, setServices] = useState([])
+  const [services, setServices] = useState<{ title: string; description: string }[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
