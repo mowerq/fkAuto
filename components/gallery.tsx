@@ -19,10 +19,12 @@ export default function Gallery() {
 
   const categories = [
     { id: "all", label: "Tüm Projeler" },
-    { id: "color-change", label: "Renk Değişimi" },
-    { id: "custom", label: "Özel Tasarımlar" },
-    { id: "commercial", label: "Ticari" },
-  ]
+    { id: "window-film", label: "Cam Filmi" },
+    { id: "ppf-wrapping", label: "PPF Kaplama" },
+    { id: "ceramic", label: "Seramik (Pasta, Cila) Uygulama" },
+    { id: "color-wrapping", label: "Renkli Kaplama" },
+    { id: "chromium-wrapping", label: "Krom Kaplama" },
+  ];
 
   useEffect(() => {
     async function fetchGallery() {
@@ -133,7 +135,7 @@ export default function Gallery() {
 
         <Tabs defaultValue="all" className="w-full">
           <div className="mb-8 flex justify-center">
-            <TabsList>
+            <TabsList className="flex flex-wrap justify-center gap-2 h-auto">
               {categories.map((category) => (
                 <TabsTrigger key={category.id} value={category.id} className="text-xs">
                   {category.label}

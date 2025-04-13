@@ -177,9 +177,11 @@ export default function EditGalleryItemPage() {
                       <SelectValue placeholder="Kategori seçin" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="color-change">Renk Değişimi</SelectItem>
-                      <SelectItem value="custom">Özel Tasarımlar</SelectItem>
-                      <SelectItem value="commercial">Ticari</SelectItem>
+                      <SelectItem value="window-film">Cam Filmi</SelectItem>
+                      <SelectItem value="ppf-wrapping">PPF Kaplama</SelectItem>
+                      <SelectItem value="ceramic">Seramik (Pasta, Cila) Uygulama</SelectItem>
+                      <SelectItem value="color-wrapping">Renkli Kaplama</SelectItem>
+                      <SelectItem value="chromium-wrapping">Krom Kaplama</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

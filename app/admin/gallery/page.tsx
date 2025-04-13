@@ -16,7 +16,7 @@ type GalleryItem = {
   title: string
   description: string
   image_url: string
-  category: string
+  category: "window-film" | "ppf-wrapping" | "ceramic" | "color-wrapping" | "chromium-wrapping"
   display_order: number
 }
 
@@ -65,6 +65,15 @@ export default function GalleryPage() {
     return <div className="flex h-screen items-center justify-center">Yükleniyor...</div>
   }
 
+  const categories = {
+    "window-film": "Cam Filmi",
+    "ppf-wrapping": "PPF Kaplama",
+    "ceramic": "Seramik (Pasta, Cila) Uygulama",
+    "color-wrapping": "Renkli Kaplama",
+    "chromium-wrapping": "Krom Kaplama",
+  };
+  
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <AdminHeader />
@@ -110,7 +119,7 @@ export default function GalleryPage() {
                   <div className="p-4">
                     <h3 className="font-semibold">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
-                    <div className="mt-2 text-xs text-muted-foreground">Kategori: {item.category}</div>
+                    <div className="mt-2 text-xs text-muted-foreground">Kategori: {categories[item.category]}</div>
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/70 opacity-0 transition-opacity group-hover:opacity-100">
                     <Link href={`/admin/gallery/${item.id}`}>

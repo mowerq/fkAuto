@@ -94,11 +94,11 @@ export default function NewGalleryItemPage() {
   }
 
   return (
-    <div className="flex h-screen bg-background">
-      <AdminSidebar />
-      <div className="flex flex-1 flex-col">
-        <AdminHeader />
-        <main className="flex-1 overflow-auto p-6">
+    <div className="flex min-h-screen flex-col bg-background">
+      <AdminHeader />
+      <div className="flex flex-1">
+        <AdminSidebar />
+        <main className="flex-1 overflow-auto p-6 lg:pl-72">
           <div className="mb-6">
             <h2 className="text-3xl font-bold tracking-tight">Yeni Galeri Öğesi Ekle</h2>
             <p className="text-muted-foreground">Galeriye yeni bir fotoğraf ekleyin.</p>
@@ -134,9 +134,11 @@ export default function NewGalleryItemPage() {
                       <SelectValue placeholder="Kategori seçin" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="color-change">Renk Değişimi</SelectItem>
-                      <SelectItem value="custom">Özel Tasarımlar</SelectItem>
-                      <SelectItem value="commercial">Ticari</SelectItem>
+                      <SelectItem value="window-film">Cam Filmi</SelectItem>
+                      <SelectItem value="ppf-wrapping">PPF Kaplama</SelectItem>
+                      <SelectItem value="ceramic">Seramik (Pasta, Cila) Uygulama</SelectItem>
+                      <SelectItem value="color-wrapping">Renkli Kaplama</SelectItem>
+                      <SelectItem value="chromium-wrapping">Krom Kaplama</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
