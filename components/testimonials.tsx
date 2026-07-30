@@ -4,31 +4,12 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const staticTestimonials = [
   {
-    id: "1",
-    name: "Ali Yılmaz",
-    role: "BMW Sahibi",
-    image_url: "/placeholder.svg?height=100&width=100",
+    id: "e4d1826d-de60-4f4c-9610-03e673226520",
+    name: "Murat Gürgenyatağı",
+    role: "Subaru Impreza WRX STI",
+    image_url: "",
     stars: 5,
-    quote:
-      "BMW'min üzerindeki mat siyah kaplama kesinlikle muhteşem görünüyor. Detaylara gösterilen özen ve işin kalitesi beklentilerimi aştı. Kesinlikle tavsiye ederim!",
-  },
-  {
-    id: "2",
-    name: "Ayşe Kaya",
-    role: "İşletme Sahibi",
-    image_url: "/placeholder.svg?height=100&width=100",
-    stars: 5,
-    quote:
-      "FK Auto, teslimat filomuzu göz alıcı marka kaplamalarıyla dönüştürdü. Süreç sorunsuzdu ve sonuçlar marka görünürlüğümüzü önemli ölçüde artırdı.",
-  },
-  {
-    id: "3",
-    name: "Mehmet Demir",
-    role: "Audi Sahibi",
-    image_url: "/placeholder.svg?height=100&width=100",
-    stars: 5,
-    quote:
-      "Audi'me özel tasarım kaplama yaptırdım ve sonuçlardan daha mutlu olamazdım. Ekip profesyoneldi ve montaj kusursuzdu.",
+    quote: "Gerçekten çok başarılı buldum. Çok memnun kaldım. Teşekkürler",
   },
 ]
 

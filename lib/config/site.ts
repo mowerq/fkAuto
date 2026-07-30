@@ -4,18 +4,18 @@ export const siteConfig = {
   url: "https://www.fkautosamsun.com",
   contact: {
     phone: "0531 434 16 04",
-    email: "info@fkauto.com",
+    email: "farukalayci55@hotmail.com",
     address: "Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun",
   },
   workingHours: {
-    weekday: "09:00 - 18:00",
-    saturday: "10:00 - 16:00",
-    sunday: "Kapalı",
+    weekday: "08:30 - 19:00",
+    saturday: "08:30 - 19:00",
+    sunday: "09:30 - 18:00",
   },
   social: {
-    facebook: "https://facebook.com/",
-    instagram: "https://instagram.com/fk__auto/",
-    twitter: "https://twitter.com/",
-    youtube: "https://youtube.com/",
+    facebook: "https://www.instagram.com/fk_auto55/",
+    instagram: "https://www.instagram.com/fk_auto55/",
+    twitter: "https://www.instagram.com/fk_auto55/",
+    youtube: "https://www.instagram.com/fk_auto55/",
   }
 }
