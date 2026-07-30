@@ -16,8 +16,6 @@ export default function AdminDashboard() {
   })
   const [stats, setStats] = useState({
     galleryCount: 0,
-    servicesCount: 0,
-    testimonialsCount: 0,
     messagesCount: 0,
     unreadMessagesCount: 0,
   })
@@ -52,22 +50,16 @@ export default function AdminDashboard() {
         // 2. Fetch other counts from Supabase
         const [
           { count: galleryCount },
-          { count: servicesCount },
-          { count: testimonialsCount },
           { count: messagesCount },
           { count: unreadMessagesCount },
         ] = await Promise.all([
           supabase.from("gallery").select("*", { count: "exact", head: true }),
-          supabase.from("services").select("*", { count: "exact", head: true }),
-          supabase.from("testimonials").select("*", { count: "exact", head: true }),
           supabase.from("contact_messages").select("*", { count: "exact", head: true }),
           supabase.from("contact_messages").select("*", { count: "exact", head: true }).eq("is_read", false),
         ])
   
         setStats({
           galleryCount: galleryCount || 0,
-          servicesCount: servicesCount || 0,
-          testimonialsCount: testimonialsCount || 0,
           messagesCount: messagesCount || 0,
           unreadMessagesCount: unreadMessagesCount || 0,
         })
@@ -125,27 +117,7 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                <CardTitle className="text-sm font-medium">Hizmetler</CardTitle>
-                <FileText className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.servicesCount}</div>
-                <p className="text-xs text-muted-foreground">Aktif hizmet</p>
-              </CardContent>
-            </Card>
 
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                <CardTitle className="text-sm font-medium">Müşteri Yorumları</CardTitle>
-                <Users className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.testimonialsCount}</div>
-                <p className="text-xs text-muted-foreground">Toplam müşteri yorumu</p>
-              </CardContent>
-            </Card>
 
             <Card>
               <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
@@ -172,13 +144,7 @@ export default function AdminDashboard() {
                   <ImageIcon className="mb-2 h-6 w-6 text-muted-foreground" />
                   <div className="text-sm font-medium">Galeri Yönetimi</div>
                 </a>
-                <a
-                  href="/admin/services"
-                  className="flex flex-col items-center justify-center rounded-lg border border-dashed p-4 text-center hover:bg-accent"
-                >
-                  <FileText className="mb-2 h-6 w-6 text-muted-foreground" />
-                  <div className="text-sm font-medium">Hizmetler</div>
-                </a>
+
                 <a
                   href="/admin/messages"
                   className="flex flex-col items-center justify-center rounded-lg border border-dashed p-4 text-center hover:bg-accent"
@@ -199,8 +165,7 @@ export default function AdminDashboard() {
                 </p>
                 <ul className="list-disc pl-4 text-sm text-muted-foreground space-y-2">
                   <li>Galeri bölümünden fotoğrafları yönetebilirsiniz</li>
-                  <li>Hizmetler bölümünden sunduğunuz hizmetleri düzenleyebilirsiniz</li>
-                  <li>İçerik bölümünden site metinlerini güncelleyebilirsiniz</li>
+                  <li>Mesajlar bölümünden iletişim formundan gelen talepleri görebilirsiniz</li>
                 </ul>
               </CardContent>
             </Card>

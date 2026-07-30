@@ -20,24 +20,9 @@ const navItems = [
     icon: ImageIcon,
   },
   {
-    title: "Hizmetler",
-    href: "/admin/services",
-    icon: FileText,
-  },
-  {
-    title: "Yorumlar",
-    href: "/admin/testimonials",
-    icon: Star,
-  },
-  {
     title: "Mesajlar",
     href: "/admin/messages",
     icon: MessageSquare,
-  },
-  {
-    title: "Ayarlar",
-    href: "/admin/settings",
-    icon: Settings,
   },
 ]
 
