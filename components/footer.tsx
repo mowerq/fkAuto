@@ -30,7 +30,7 @@ export default function Footer() {
   const [settings, setSettings] = useState<Settings>({
     phone: "0531 434 16 04",
     email: "info@fkauto.com",
-    address: "Kaplama Caddesi No: 123, Otomotiv Mahallesi, İstanbul",
+    address: "Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun",
     workingHoursWeekday: "09:00 - 18:00",
     workingHoursSaturday: "10:00 - 16:00",
     workingHoursSunday: "Kapalı",
@@ -147,32 +147,27 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Hızlı Bağlantılar</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#services" className="text-muted-foreground hover:text-primary">
+                <Link href="/hizmetler" className="text-muted-foreground hover:text-primary">
                   Hizmetler
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="text-muted-foreground hover:text-primary">
+                <Link href="/hakkimizda" className="text-muted-foreground hover:text-primary">
                   Hakkımızda
                 </Link>
               </li>
               <li>
-                <Link href="#gallery" className="text-muted-foreground hover:text-primary">
+                <Link href="/galeri" className="text-muted-foreground hover:text-primary">
                   Galeri
                 </Link>
               </li>
               <li>
-                <Link href="#process" className="text-muted-foreground hover:text-primary">
-                  Süreç
-                </Link>
-              </li>
-              <li>
-                <Link href="#testimonials" className="text-muted-foreground hover:text-primary">
+                <Link href="/yorumlar" className="text-muted-foreground hover:text-primary">
                   Yorumlar
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-muted-foreground hover:text-primary">
+                <Link href="/iletisim" className="text-muted-foreground hover:text-primary">
                   İletişim
                 </Link>
               </li>
@@ -194,7 +189,7 @@ export default function Footer() {
                 : services.map((service) => (
                     <li key={service.id} className="flex items-center gap-2">
                       <Circle className="h-3 w-3 fill-primary text-primary" />
-                      <Link href="#" className="text-muted-foreground hover:text-primary">
+                      <Link href="/hizmetler" className="text-muted-foreground hover:text-primary">
                         {service.title}
                       </Link>
                     </li>

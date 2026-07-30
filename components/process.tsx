@@ -1,6 +1,7 @@
 import { CheckCircle2 } from "lucide-react"
 
-export default function Process() {
+export default function Process({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+  const HeadingTag = headingAs
   const steps = [
     {
       number: "01",
@@ -42,7 +43,7 @@ export default function Process() {
     <section id="process" className="py-20">
       <div className="container">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Çalışma Sürecimiz</h2>
+          <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Çalışma Sürecimiz</HeadingTag>
           <p className="mx-auto max-w-2xl text-muted-foreground">Aracınızı hassasiyet ve özenle nasıl dönüştürüyoruz</p>
         </div>
 

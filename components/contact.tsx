@@ -26,7 +26,8 @@ interface Settings {
   workingHoursSunday: string
 }
 
-export default function Contact() {
+export default function Contact({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+  const HeadingTag = headingAs
   const { toast } = useToast()
 
   const [formData, setFormData] = useState<FormData>({
@@ -41,7 +42,7 @@ export default function Contact() {
   const [settings, setSettings] = useState<Settings>({
     phone: "0531 434 16 04",
     email: "info@fkauto.com",
-    address: "Kaplama Caddesi No: 123, Otomotiv Mahallesi, İstanbul",
+    address: "Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun",
     workingHoursWeekday: "09:00 - 18:00",
     workingHoursSaturday: "10:00 - 16:00",
     workingHoursSunday: "Kapalı",
@@ -122,7 +123,7 @@ export default function Contact() {
     <section id="contact" className="py-20">
       <div className="container">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">İletişim</h2>
+          <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">İletişim</HeadingTag>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Ücretsiz danışma ve teklif için bizimle iletişime geçin
           </p>

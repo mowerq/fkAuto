@@ -16,7 +16,8 @@ interface Testimonial {
   quote: string
 }
 
-export default function Testimonials() {
+export default function Testimonials({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+  const HeadingTag = headingAs
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = getSupabaseClient()
@@ -78,7 +79,7 @@ export default function Testimonials() {
       <section id="testimonials" className="bg-muted py-20">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Müşterilerimiz Ne Diyor</h2>
+            <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Müşterilerimiz Ne Diyor</HeadingTag>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               Sadece bizim sözümüze güvenmeyin - memnun müşterilerimizden dinleyin
             </p>
@@ -118,7 +119,7 @@ export default function Testimonials() {
     <section id="testimonials" className="bg-muted py-20">
       <div className="container">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Müşterilerimiz Ne Diyor</h2>
+          <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Müşterilerimiz Ne Diyor</HeadingTag>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Sadece bizim sözümüze güvenmeyin - memnun müşterilerimizden dinleyin
           </p>

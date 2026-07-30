@@ -10,6 +10,36 @@ export async function GET() {
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
+        <url>
+            <loc>${baseUrl}/hizmetler</loc>
+            <lastmod>${new Date().toISOString()}</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.9</priority>
+        </url>
+        <url>
+            <loc>${baseUrl}/hakkimizda</loc>
+            <lastmod>${new Date().toISOString()}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>${baseUrl}/galeri</loc>
+            <lastmod>${new Date().toISOString()}</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.9</priority>
+        </url>
+        <url>
+            <loc>${baseUrl}/yorumlar</loc>
+            <lastmod>${new Date().toISOString()}</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>${baseUrl}/iletisim</loc>
+            <lastmod>${new Date().toISOString()}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.9</priority>
+        </url>
     </urlset>`
 
   return new Response(xml, {

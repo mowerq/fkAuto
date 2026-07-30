@@ -81,7 +81,7 @@ export async function POST(request: Request) {
     const settings = [
       { key: "phone", value: "0531 434 16 04", type: "text" },
       { key: "email", value: "info@fkauto.com", type: "text" },
-      { key: "address", value: "Kaplama Caddesi No: 123, Otomotiv Mahallesi, İstanbul", type: "text" },
+      { key: "address", value: "Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun", type: "text" },
       { key: "workingHoursWeekday", value: "09:00 - 18:00", type: "text" },
       { key: "workingHoursSaturday", value: "10:00 - 16:00", type: "text" },
       { key: "workingHoursSunday", value: "Kapalı", type: "text" },

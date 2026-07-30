@@ -3,13 +3,14 @@ import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
 import Link from "next/link"
 
-export default function About() {
+export default function About({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+  const HeadingTag = headingAs
   return (
     <section id="about" className="py-20 bg-muted">
       <div className="container">
         <div className="grid gap-12 md:grid-cols-2 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold tracking-tight mb-6 sm:text-4xl">Hakkımızda</h2>
+            <HeadingTag className="text-3xl font-bold tracking-tight mb-6 sm:text-4xl">Hakkımızda</HeadingTag>
             <p className="mb-4 text-muted-foreground">
               FK Auto Araç Estetik Merkezi, Faruk KALAYCI tarafından kurulmuş, araç kaplama ve koruma konusunda
               uzmanlaşmış bir firmadır. Yılların deneyimi ve sektördeki uzmanlığımızla, araçlarınıza en kaliteli hizmeti

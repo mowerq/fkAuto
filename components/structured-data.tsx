@@ -1,5 +1,3 @@
-import Script from "next/script"
-
 export default function StructuredData() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -10,8 +8,9 @@ export default function StructuredData() {
     telephone: "+90 531 434 16 04",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Derebahçe, Gümüşeşik Sk No:3/1 D:1, 55060 İlkadım/Samsun",
-      addressLocality: "Samsun",
+      streetAddress: "Derebahçe, Gümüşeşik Sk No:3",
+      addressLocality: "İlkadım",
+      addressRegion: "Samsun",
       postalCode: "55060",
       addressCountry: "TR",
     },
@@ -61,6 +60,52 @@ export default function StructuredData() {
       "@type": "City",
       name: "Samsun",
     },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Araç Kaplama Hizmetleri",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Cam Filmi Uygulaması",
+            description: "Araç camlarınız için UV korumalı, ısı yalıtımlı profesyonel cam filmi uygulaması.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "PPF Kaplama",
+            description: "Aracınızın boyasını taş çiziklerine ve çevresel hasarlara karşı koruyacak şeffaf koruma filmi.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Seramik Kaplama",
+            description: "Aracınızın boyasına uzun süreli parlaklık ve koruma sağlayan seramik kaplama uygulaması.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Renkli Kaplama",
+            description: "Premium vinil filmler ile aracınızı tamamen yeni bir renge dönüştürme hizmeti.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Krom Kaplama",
+            description: "Aracınıza lüks ve göz alıcı bir görünüm kazandıran krom kaplama hizmetleri.",
+          },
+        },
+      ],
+    },
     description: "Profesyonel araç kaplama, cam filmi, PPF kaplama ve seramik kaplama hizmetleri sunuyoruz.",
     offers: {
       "@type": "Offer",
@@ -94,10 +139,26 @@ export default function StructuredData() {
       },
       {
         "@type": "Question",
-        name: "En iyi araç kaplama firması hangisidir?",
+        name: "Samsun'da en iyi araç kaplama firması hangisidir?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "FK Auto, uzman kadrosu ve kaliteli malzemeleriyle en iyi araç kaplama hizmetini sunmaktadır.",
+          text: "FK Auto, Samsun İlkadım'da uzman kadrosu ve kaliteli malzemeleriyle profesyonel araç kaplama hizmeti sunmaktadır.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Cam filmi uygulaması ne kadar sürer?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Cam filmi uygulaması genellikle 2-4 saat arasında tamamlanır. Aracın cam sayısına ve filmin türüne göre süre değişebilir.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "PPF kaplama nedir?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "PPF (Paint Protection Film), aracınızın boyasını taş çiziklerine, böcek kalıntılarına ve UV ışınlarına karşı koruyan şeffaf bir koruma filmidir.",
         },
       },
     ],
@@ -105,18 +166,15 @@ export default function StructuredData() {
 
   return (
     <>
-      <Script
-        id="local-business-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      <Script
-        id="service-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <Script
-        id="faq-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />

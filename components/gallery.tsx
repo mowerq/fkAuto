@@ -13,7 +13,8 @@ interface GalleryItem {
   description: string
 }
 
-export default function Gallery() {
+export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+  const HeadingTag = headingAs
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -95,7 +96,7 @@ export default function Gallery() {
       <section id="gallery" className="bg-muted py-20">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Çalışmalarımız</h2>
+            <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Çalışmalarımız</HeadingTag>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               Tamamlanmış vinil kaplama projelerimiz galerisine göz atın
             </p>
@@ -127,7 +128,7 @@ export default function Gallery() {
     <section id="gallery" className="bg-muted py-20">
       <div className="container">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Çalışmalarımız</h2>
+          <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Çalışmalarımız</HeadingTag>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Tamamlanmış vinil kaplama projelerimiz galerisine göz atın
           </p>

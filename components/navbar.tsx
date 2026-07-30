@@ -8,6 +8,14 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+const navLinks = [
+  { href: "/hizmetler", label: "Hizmetler" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/galeri", label: "Galeri" },
+  { href: "/yorumlar", label: "Yorumlar" },
+  { href: "/iletisim", label: "İletişim" },
+]
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -20,49 +28,22 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo boyutunu artırın ve kenarlarını metinle hizalayın */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="FK Auto Logo" width={180} height={75} className="h-14 w-auto" />
+          <Image src="/logo.png" alt="FK Auto - Samsun Araç Kaplama Merkezi" width={180} height={75} className="h-14 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex md:items-center md:gap-6">
-          <Link
-            href="#services"
-            className="text-sm font-medium text-white/80 transition-colors hover:text-primary dark:text-white/80 dark:hover:text-primary"
-          >
-            Hizmetler
-          </Link>
-          <Link
-            href="#about"
-            className="text-sm font-medium text-white/80 transition-colors hover:text-primary dark:text-white/80 dark:hover:text-primary"
-          >
-            Hakkımızda
-          </Link>
-          <Link
-            href="#gallery"
-            className="text-sm font-medium text-white/80 transition-colors hover:text-primary dark:text-white/80 dark:hover:text-primary"
-          >
-            Galeri
-          </Link>
-          <Link
-            href="#process"
-            className="text-sm font-medium text-white/80 transition-colors hover:text-primary dark:text-white/80 dark:hover:text-primary"
-          >
-            Süreç
-          </Link>
-          <Link
-            href="#testimonials"
-            className="text-sm font-medium text-white/80 transition-colors hover:text-primary dark:text-white/80 dark:hover:text-primary"
-          >
-            Yorumlar
-          </Link>
-          <Link
-            href="#contact"
-            className="text-sm font-medium text-white/80 transition-colors hover:text-primary dark:text-white/80 dark:hover:text-primary"
-          >
-            İletişim
-          </Link>
+        <nav className="hidden md:flex md:items-center md:gap-6" aria-label="Ana menü">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-white/80 transition-colors hover:text-primary dark:text-white/80 dark:hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
           <ThemeToggle />
-          <Link href="#contact"><Button variant="default" size="sm">
+          <Link href="/iletisim"><Button variant="default" size="sm">
             Teklif Al
           </Button></Link>
         </nav>
@@ -86,60 +67,29 @@ export default function Navbar() {
       >
         <div className="flex h-16 items-center justify-between border-b border-gray-800 bg-black px-4 dark:border-gray-800 dark:bg-black">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="FK Auto Logo" width={180} height={75} className="h-14 w-auto" />
+            <Image src="/logo.png" alt="FK Auto - Samsun Araç Kaplama Merkezi" width={180} height={75} className="h-14 w-auto" />
           </Link>
           <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" onClick={toggleMenu}>
             <X className="h-6 w-6" />
             <span className="sr-only">Menüyü kapat</span>
           </Button>
         </div>
-        <nav className="flex flex-col gap-4 p-4 bg-black text-white dark:bg-black dark:text-white">
-          <Link
-            href="#services"
-            className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-gray-800"
-            onClick={toggleMenu}
-          >
-            Hizmetler
+        <nav className="flex flex-col gap-4 p-4 bg-black text-white dark:bg-black dark:text-white" aria-label="Mobil menü">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-gray-800"
+              onClick={toggleMenu}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/iletisim" onClick={toggleMenu}>
+            <Button className="mt-2 w-full">Teklif Al</Button>
           </Link>
-          <Link
-            href="#about"
-            className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-gray-800"
-            onClick={toggleMenu}
-          >
-            Hakkımızda
-          </Link>
-          <Link
-            href="#gallery"
-            className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-gray-800"
-            onClick={toggleMenu}
-          >
-            Galeri
-          </Link>
-          <Link
-            href="#process"
-            className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-gray-800"
-            onClick={toggleMenu}
-          >
-            Süreç
-          </Link>
-          <Link
-            href="#testimonials"
-            className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-gray-800"
-            onClick={toggleMenu}
-          >
-            Yorumlar
-          </Link>
-          <Link
-            href="#contact"
-            className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-gray-800"
-            onClick={toggleMenu}
-          >
-            İletişim
-          </Link>
-          <Button className="mt-2">Teklif Al</Button>
         </nav>
       </div>
     </header>
   )
 }
-

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"
 import { Circle } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function Services() {
+export default function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+  const HeadingTag = headingAs
   const [services, setServices] = useState<{ title: string; description: string }[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -64,7 +65,7 @@ export default function Services() {
       <section id="services" className="py-20">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Hizmetlerimiz</h2>
+            <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Hizmetlerimiz</HeadingTag>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               Her türlü araç için profesyonel kaplama ve bakım hizmetleri
             </p>
@@ -97,7 +98,7 @@ export default function Services() {
     <section id="services" className="py-20">
       <div className="container">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Hizmetlerimiz</h2>
+          <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Hizmetlerimiz</HeadingTag>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Her türlü araç için profesyonel kaplama ve bakım hizmetleri
           </p>
