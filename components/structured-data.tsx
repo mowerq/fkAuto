@@ -2,10 +2,12 @@ export default function StructuredData() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "AutoBodyShop",
+    "@id": "https://www.fkautosamsun.com/#organization",
     name: "FK Auto - Araç Kaplama Merkezi",
     image: "https://www.fkautosamsun.com/logo.png",
     url: "https://www.fkautosamsun.com",
     telephone: "+90 531 434 16 04",
+    email: "farukalayci55@hotmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Derebahçe, Gümüşeşik Sk No:3",
@@ -39,12 +41,79 @@ export default function StructuredData() {
         closes: "18:00",
       },
     ],
-    sameAs: ["https://www.instagram.com/fk__auto/"],
+    sameAs: ["https://www.instagram.com/fk_auto55/"],
     priceRange: "₺₺",
     areaServed: {
       "@type": "City",
       name: "Samsun",
     },
+    founder: {
+      "@type": "Person",
+      name: "Faruk Kalaycı",
+    },
+  }
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.fkautosamsun.com/#website",
+    name: "FK Auto - Araç Estetik Merkezi",
+    url: "https://www.fkautosamsun.com",
+    publisher: {
+      "@id": "https://www.fkautosamsun.com/#organization",
+    },
+    inLanguage: "tr-TR",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://www.fkautosamsun.com/?s={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Ana Sayfa",
+        item: "https://www.fkautosamsun.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Hizmetler",
+        item: "https://www.fkautosamsun.com/hizmetler",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Hakkımızda",
+        item: "https://www.fkautosamsun.com/hakkimizda",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Galeri",
+        item: "https://www.fkautosamsun.com/galeri",
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        name: "Yorumlar",
+        item: "https://www.fkautosamsun.com/yorumlar",
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        name: "İletişim",
+        item: "https://www.fkautosamsun.com/iletisim",
+      },
+    ],
   }
 
   const serviceSchema = {
@@ -52,9 +121,7 @@ export default function StructuredData() {
     "@type": "Service",
     serviceType: "Araç Kaplama Hizmetleri",
     provider: {
-      "@type": "AutoBodyShop",
-      name: "FK Auto - Araç Estetik Merkezi",
-      url: "https://www.fkautosamsun.com",
+      "@id": "https://www.fkautosamsun.com/#organization",
     },
     areaServed: {
       "@type": "City",
@@ -169,6 +236,14 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"

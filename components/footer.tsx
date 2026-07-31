@@ -46,22 +46,30 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex gap-4">
-              <Link href={siteConfig.social.facebook} className="text-muted-foreground hover:text-primary">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href={siteConfig.social.instagram} className="text-muted-foreground hover:text-primary">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href={siteConfig.social.twitter} className="text-muted-foreground hover:text-primary">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href={siteConfig.social.youtube} className="text-muted-foreground hover:text-primary">
-                <Youtube className="h-5 w-5" />
-                <span className="sr-only">YouTube</span>
-              </Link>
+              {siteConfig.social.facebook && (
+                <Link href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                  <Facebook className="h-5 w-5" />
+                  <span className="sr-only">Facebook</span>
+                </Link>
+              )}
+              {siteConfig.social.instagram && (
+                <Link href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                  <Instagram className="h-5 w-5" />
+                  <span className="sr-only">Instagram</span>
+                </Link>
+              )}
+              {siteConfig.social.twitter && (
+                <Link href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                  <Twitter className="h-5 w-5" />
+                  <span className="sr-only">Twitter</span>
+                </Link>
+              )}
+              {siteConfig.social.youtube && (
+                <Link href={siteConfig.social.youtube} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                  <Youtube className="h-5 w-5" />
+                  <span className="sr-only">YouTube</span>
+                </Link>
+              )}
             </div>
           </div>
 

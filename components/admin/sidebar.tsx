@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { LayoutDashboard, ImageIcon, Settings, MessageSquare, FileText, LogOut, Star, Menu, X } from "lucide-react"
+import { LayoutDashboard, MessageSquare, LogOut, Menu, X } from "lucide-react"
 import { signOut } from "@/lib/auth"
 
 const navItems = [
@@ -13,11 +13,6 @@ const navItems = [
     title: "Dashboard",
     href: "/admin",
     icon: LayoutDashboard,
-  },
-  {
-    title: "Galeri",
-    href: "/admin/gallery",
-    icon: ImageIcon,
   },
   {
     title: "Mesajlar",

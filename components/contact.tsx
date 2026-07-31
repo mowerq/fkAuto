@@ -154,41 +154,47 @@ export default function Contact({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
                 <CardDescription>Aşağıdaki bilgileri kullanarak doğrudan bize ulaşabilirsiniz</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h4 className="font-medium">Adres</h4>
-                    <p className="text-muted-foreground">{siteConfig.contact.address}</p>
+                <address className="not-italic space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="mt-1 h-5 w-5 text-primary" />
+                    <div>
+                      <h4 className="font-medium">Adres</h4>
+                      <p className="text-muted-foreground">{siteConfig.contact.address}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h4 className="font-medium">Telefon</h4>
-                    <p className="text-muted-foreground">{siteConfig.contact.phone}</p>
+                  <div className="flex items-start gap-3">
+                    <Phone className="mt-1 h-5 w-5 text-primary" />
+                    <div>
+                      <h4 className="font-medium">Telefon</h4>
+                      <p className="text-muted-foreground">
+                        <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}>{siteConfig.contact.phone}</a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Mail className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h4 className="font-medium">E-posta</h4>
-                    <p className="text-muted-foreground">{siteConfig.contact.email}</p>
+                  <div className="flex items-start gap-3">
+                    <Mail className="mt-1 h-5 w-5 text-primary" />
+                    <div>
+                      <h4 className="font-medium">E-posta</h4>
+                      <p className="text-muted-foreground">
+                        <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Clock className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h4 className="font-medium">Çalışma Saatleri</h4>
-                    <p className="text-muted-foreground">Pazartesi - Cuma: {siteConfig.workingHours.weekday}</p>
-                    <p className="text-muted-foreground">Cumartesi: {siteConfig.workingHours.saturday}</p>
-                    <p className="text-muted-foreground">Pazar: {siteConfig.workingHours.sunday}</p>
+                  <div className="flex items-start gap-3">
+                    <Clock className="mt-1 h-5 w-5 text-primary" />
+                    <div>
+                      <h4 className="font-medium">Çalışma Saatleri</h4>
+                      <p className="text-muted-foreground">Pazartesi - Cuma: {siteConfig.workingHours.weekday}</p>
+                      <p className="text-muted-foreground">Cumartesi: {siteConfig.workingHours.saturday}</p>
+                      <p className="text-muted-foreground">Pazar: {siteConfig.workingHours.sunday}</p>
+                    </div>
                   </div>
-                </div>
+                </address>
               </CardContent>
             </Card>
 
             <Card>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11996.44475527692!2d36.3377416!3d41.2629149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4087d89c807d8ebf%3A0x27b584c2aa3ed9bb!2zRGVyZWJhaMOnZSwgR8O8bcO8xZ9lxZ9payBTayBObzozLzEsIDU1MDYwIMSwbGthZMSxbS9TYW1zdW4!5e0!3m2!1sen!2str!4v1743682981514!5m2!1sen!2str" width="100%" height="250" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11996.44475527692!2d36.3377416!3d41.2629149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4087d89c807d8ebf%3A0x27b584c2aa3ed9bb!2zRGVyZWJhaMOnZSwgR8O8bcO8xZ9lxZ9payBTayBObzozLzEsIDU1MDYwIMSwbGthZMSxbS9TYW1zdW4!5e0!3m2!1sen!2str!4v1743682981514!5m2!1sen!2str" width="100%" height="250" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="FK Auto - Samsun İlkadım Konum Haritası"></iframe>
             </Card>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { AdminSidebar } from "@/components/admin/sidebar"
 import { AdminHeader } from "@/components/admin/header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MessageSquare, ImageIcon, FileText, Users } from "lucide-react"
+import { MessageSquare, Users } from "lucide-react"
 import { getSupabaseClient } from "@/lib/supabase/client"
 
 export default function AdminDashboard() {
@@ -15,7 +15,6 @@ export default function AdminDashboard() {
     totalVisitors: 0,
   })
   const [stats, setStats] = useState({
-    galleryCount: 0,
     messagesCount: 0,
     unreadMessagesCount: 0,
   })
@@ -49,17 +48,14 @@ export default function AdminDashboard() {
   
         // 2. Fetch other counts from Supabase
         const [
-          { count: galleryCount },
           { count: messagesCount },
           { count: unreadMessagesCount },
         ] = await Promise.all([
-          supabase.from("gallery").select("*", { count: "exact", head: true }),
           supabase.from("contact_messages").select("*", { count: "exact", head: true }),
           supabase.from("contact_messages").select("*", { count: "exact", head: true }).eq("is_read", false),
         ])
   
         setStats({
-          galleryCount: galleryCount || 0,
           messagesCount: messagesCount || 0,
           unreadMessagesCount: unreadMessagesCount || 0,
         })
@@ -106,16 +102,7 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                <CardTitle className="text-sm font-medium">Galeri Öğeleri</CardTitle>
-                <ImageIcon className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.galleryCount}</div>
-                <p className="text-xs text-muted-foreground">Toplam galeri öğesi</p>
-              </CardContent>
-            </Card>
+
 
 
 
@@ -137,13 +124,7 @@ export default function AdminDashboard() {
                 <CardTitle>Hızlı Erişim</CardTitle>
               </CardHeader>
               <CardContent className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <a
-                  href="/admin/gallery"
-                  className="flex flex-col items-center justify-center rounded-lg border border-dashed p-4 text-center hover:bg-accent"
-                >
-                  <ImageIcon className="mb-2 h-6 w-6 text-muted-foreground" />
-                  <div className="text-sm font-medium">Galeri Yönetimi</div>
-                </a>
+
 
                 <a
                   href="/admin/messages"
@@ -164,7 +145,6 @@ export default function AdminDashboard() {
                   Admin paneli kullanımı hakkında yardıma mı ihtiyacınız var?
                 </p>
                 <ul className="list-disc pl-4 text-sm text-muted-foreground space-y-2">
-                  <li>Galeri bölümünden fotoğrafları yönetebilirsiniz</li>
                   <li>Mesajlar bölümünden iletişim formundan gelen talepleri görebilirsiniz</li>
                 </ul>
               </CardContent>

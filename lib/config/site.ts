@@ -13,9 +13,9 @@ export const siteConfig = {
     sunday: "09:30 - 18:00",
   },
   social: {
-    facebook: "https://www.instagram.com/fk_auto55/",
+    facebook: "",
     instagram: "https://www.instagram.com/fk_auto55/",
-    twitter: "https://www.instagram.com/fk_auto55/",
-    youtube: "https://www.instagram.com/fk_auto55/",
+    twitter: "",
+    youtube: "",
   }
 }

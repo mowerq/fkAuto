@@ -1,9 +1,9 @@
 User-agent: *
 Allow: /
 
-# Disallow admin pages
+# Disallow admin and API pages
 Disallow: /admin/
-Disallow: /admin/*
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://www.fkautosamsun.com/sitemap.xml

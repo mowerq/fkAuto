@@ -10,9 +10,12 @@ export default function Hero() {
           autoPlay
           muted
           playsInline
+          preload="none"
+          aria-hidden="true"
           className="absolute inset-0 z-0 w-full h-full object-cover opacity-80"
         >
           <source src="/heroVideo.mp4" type="video/mp4" />
+          FK Auto Samsun araç kaplama tanıtım videosu
         </video>
       </div>
       <div className="container relative z-10">

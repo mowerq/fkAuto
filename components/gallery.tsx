@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -15,114 +14,57 @@ interface GalleryItem {
 
 export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
   const HeadingTag = headingAs
-  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([])
-  const [loading, setLoading] = useState(true)
 
   const categories = [
     { id: "all", label: "Tüm Projeler" },
-    { id: "window-film", label: "Cam Filmi" },
     { id: "ppf-wrapping", label: "PPF Kaplama" },
     { id: "ceramic", label: "Seramik (Pasta, Cila) Uygulama" },
-    { id: "color-wrapping", label: "Renkli Kaplama" },
-    { id: "chromium-wrapping", label: "Krom Kaplama" },
   ];
 
-  useEffect(() => {
-    async function fetchGallery() {
-      try {
-        const response = await fetch("/api/gallery")
-        if (!response.ok) {
-          throw new Error("Failed to fetch gallery")
-        }
-        const data = await response.json()
-        setGalleryItems(data)
-      } catch (error) {
-        console.error("Error fetching gallery:", error)
-        // Fallback to default gallery items
-        setGalleryItems([
-          {
-            id: 1,
-            category: "color-change",
-            title: "Mat Siyah BMW",
-            image_url: "/placeholder.svg?height=600&width=800",
-            description: "BMW M4 üzerine tam mat siyah kaplama",
-          },
-          {
-            id: 2,
-            category: "color-change",
-            title: "Saten Kırmızı Mercedes",
-            image_url: "/placeholder.svg?height=600&width=800",
-            description: "Mercedes C-Serisi üzerine saten kırmızı kaplama",
-          },
-          {
-            id: 3,
-            category: "custom",
-            title: "Yarış Şeritleri",
-            image_url: "/placeholder.svg?height=600&width=800",
-            description: "Mustang GT üzerine özel yarış şeritleri",
-          },
-          {
-            id: 4,
-            category: "custom",
-            title: "Geometrik Desen",
-            image_url: "/placeholder.svg?height=600&width=800",
-            description: "Özel geometrik desen kaplama",
-          },
-          {
-            id: 5,
-            category: "commercial",
-            title: "Kargo Aracı Kaplaması",
-            image_url: "/placeholder.svg?height=600&width=800",
-            description: "Bir kargo şirketi için tam ticari kaplama",
-          },
-          {
-            id: 6,
-            category: "commercial",
-            title: "Yemek Kamyonu Markalaması",
-            image_url: "/placeholder.svg?height=600&width=800",
-            description: "Tam markalama ile özel yemek kamyonu kaplaması",
-          },
-        ])
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchGallery()
-  }, [])
-
-  if (loading) {
-    return (
-      <section id="gallery" className="bg-muted py-20">
-        <div className="container">
-          <div className="mb-12 text-center">
-            <HeadingTag className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Çalışmalarımız</HeadingTag>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              Tamamlanmış vinil kaplama projelerimiz galerisine göz atın
-            </p>
-          </div>
-
-          <div className="mb-8 flex justify-center">
-            <div className="h-10 w-64 animate-pulse rounded-lg bg-gray-200"></div>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[...Array(6)].map((_, index) => (
-              <Card key={index} className="overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="relative aspect-video overflow-hidden bg-gray-200 animate-pulse"></div>
-                  <div className="p-4 space-y-2">
-                    <div className="h-6 w-32 animate-pulse rounded bg-gray-200"></div>
-                    <div className="h-4 w-full animate-pulse rounded bg-gray-200"></div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
+  const galleryItems: GalleryItem[] = [
+    {
+      id: 1,
+      category: "ppf-wrapping",
+      title: "Mercedes",
+      image_url: "/mercedes.jpg",
+      description: "Kapı direkleri şeffaf PPF kaplama, Seramik kaplama, 3 aşamalı pasta cila, Demir tozu, Kil, Detaylı ön yıkama",
+    },
+    {
+      id: 2,
+      category: "ceramic",
+      title: "BMW",
+      image_url: "/bmw.jpg",
+      description: "Pasta cila, Fireball seramik kaplama, Demir tozu, Kil, Detaylı ön yıkama",
+    },
+    {
+      id: 3,
+      category: "ceramic",
+      title: "Honda",
+      image_url: "/honda.jpg",
+      description: "Farlar , stoplar şeffaf PPF kaplama, Fireball seramik wax, Detaylı ön yıkama",
+    },
+    {
+      id: 4,
+      category: "ceramic",
+      title: "Ford",
+      image_url: "/ford.jpg",
+      description: "Komple şeffaf PPF kaplama, Kaplama öncesi pasta cila yüzey düzeltme, Demir tozu, Kil, Detaylı ön yıkama",
+    },
+    {
+      id: 5,
+      category: "ceramic",
+      title: "Peugeot",
+      image_url: "/peugeot.jpg",
+      description: "Pasta cila ( Boya koruma ), Demir tozu, Kil, Detaylı ön yıkama",
+    },
+    {
+      id: 6,
+      category: "ceramic",
+      title: "Yamaha",
+      image_url: "/yamaha.jpg",
+      description: "Pasta cila ( Boya koruma ), Fireball wax",
+    },
+  ]
 
   return (
     <section id="gallery" className="bg-muted py-20">
@@ -177,8 +119,10 @@ function GalleryItem({ item }: { item: GalleryItem }) {
         <div className="relative aspect-video overflow-hidden">
           <Image
             src={item.image_url || "/placeholder.svg"}
-            alt={item.title}
+            alt={`${item.title} - ${item.description} | FK Auto Samsun`}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="lazy"
             className="object-cover transition-transform duration-300 hover:scale-105"
           />
         </div>
