@@ -79,7 +79,7 @@ export async function POST(request: Request) {
 
     // Seed initial settings
     const settings = [
-      { key: "phone", value: "0531 434 16 04", type: "text" },
+      { key: "phone", value: "0505 504 00 55", type: "text" },
       { key: "email", value: "info@fkauto.com", type: "text" },
       { key: "address", value: "Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun", type: "text" },
       { key: "workingHoursWeekday", value: "09:00 - 18:00", type: "text" },
@@ -105,7 +105,7 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error("Seed admin error:", error)
-    return NextResponse.json({ error: "Internal server error: " + (error.message || "Unknown error") }, { status: 500 })
+    return NextResponse.json({ error: "Internal server error: " + (error instanceof Error ? error.message : "Unknown error") }, { status: 500 })
   }
 }
 

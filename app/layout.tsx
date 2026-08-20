@@ -22,10 +22,21 @@ export const metadata: Metadata = {
     "seramik kaplama samsun",
     "renkli kaplama samsun",
     "krom kaplama samsun",
+    "pasta cila samsun",
+    "şeffaf PPF kaplama samsun",
+    "familya samsun",
+    "boyasız göçük samsun",
+    "vip yıkama samsun",
     "araç estetik samsun",
     "FK Auto",
     "araç kaplama",
     "boya koruma filmi",
+    "cam filmi",
+    "pasta cila",
+    "şeffaf PPF kaplama",
+    "familya",
+    "boyasız göçük",
+    "vip yıkama"
   ],
   authors: [{ name: "FK Auto Araç Estetik Merkezi" }],
   openGraph: {
@@ -35,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "FK Auto Araç Estetik Merkezi",
     title: "FK Auto | Samsun Araç Kaplama, Cam Filmi, PPF ve Seramik Kaplama",
     description:
-      "Samsun'da profesyonel araç kaplama hizmetleri. Cam filmi, PPF kaplama, seramik kaplama, renkli kaplama ve krom kaplama.",
+      "Samsun'da profesyonel araç kaplama hizmetleri. Cam filmi, pasta cila, şeffaf PPF kaplama, familya, boyasız göçük, vip yıkama ve seramik kaplama.",
     images: [
       {
         url: "/logo.png",
@@ -82,9 +93,9 @@ export default function RootLayout({
         <noscript>
           <div style={{ padding: "2rem", textAlign: "center" }}>
             <h1>FK Auto - Araç Estetik Merkezi | Samsun</h1>
-            <p>Profesyonel araç kaplama hizmetleri: Cam filmi, PPF, seramik kaplama, renkli kaplama, krom kaplama.</p>
+            <p>Profesyonel araç kaplama hizmetleri: Cam filmi, pasta cila, şeffaf PPF kaplama, familya, boyasız göçük, vip yıkama, seramik kaplama, renkli kaplama, krom kaplama.</p>
             <p>Adres: Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun</p>
-            <p>Telefon: <a href="tel:+905314341604">0531 434 16 04</a></p>
+            <p>Telefon: <a href="tel:+905055040055">0505 504 00 55</a></p>
           </div>
         </noscript>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>

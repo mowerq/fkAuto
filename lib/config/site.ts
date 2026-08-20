@@ -3,7 +3,7 @@ export const siteConfig = {
   description: "Premium araç kaplama ve estetik hizmetleri. Uzman montaj ve kaliteli malzemelerle aracınızı dönüştürün.",
   url: "https://www.fkautosamsun.com",
   contact: {
-    phone: "0531 434 16 04",
+    phone: "0505 504 00 55",
     email: "farukalayci55@hotmail.com",
     address: "Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun",
   },

@@ -123,7 +123,7 @@ export default function Contact({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
                   <Input
                     id="phone"
                     name="phone"
-                    placeholder="0531 123 4567"
+                    placeholder="0505 504 00 55"
                     value={formData.phone}
                     onChange={handleChange}
                   />
