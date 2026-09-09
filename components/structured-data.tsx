@@ -6,7 +6,7 @@ export default function StructuredData() {
     name: "FK Auto - Araç Kaplama Merkezi",
     image: "https://www.fkautosamsun.com/logo.png",
     url: "https://www.fkautosamsun.com",
-    telephone: "+90 531 434 16 04",
+    telephone: "+90 505 504 00 55",
     email: "farukalayci55@hotmail.com",
     address: {
       "@type": "PostalAddress",

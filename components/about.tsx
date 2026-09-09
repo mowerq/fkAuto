@@ -22,7 +22,7 @@ export default function About({ headingAs = "h2" }: { headingAs?: "h1" | "h2" })
             </p>
             <div className="flex items-center gap-4 mb-6">
               <Phone className="h-5 w-5 text-primary" />
-              <span className="font-medium">+90 531 434 16 04</span>
+              <span className="font-medium">+90 505 504 00 55</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="#contact"> <Button>Daha Fazla Bilgi</Button></Link>
