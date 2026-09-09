@@ -25,8 +25,8 @@ export default function About({ headingAs = "h2" }: { headingAs?: "h1" | "h2" })
               <span className="font-medium">+90 505 504 00 55</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#contact"> <Button>Daha Fazla Bilgi</Button></Link>
-              <Link href="#contact"><Button variant="outline">İletişime Geçin</Button></Link>
+              <Link href="/contact"> <Button>Daha Fazla Bilgi</Button></Link>
+              <Link href="/contact"><Button variant="outline">İletişime Geçin</Button></Link>
             </div>
           </div>
           <div className="order-1 md:order-2 relative aspect-square rounded-lg overflow-hidden">
