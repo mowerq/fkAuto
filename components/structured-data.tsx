@@ -136,7 +136,7 @@ export default function StructuredData() {
           itemOffered: {
             "@type": "Service",
             name: "Cam Filmi Uygulaması",
-            description: "Araç camlarınız için UV korumalı, ısı yalıtımlı profesyonel cam filmi uygulaması.",
+            description: "Araç camlarınız için ısı yalıtımlı profesyonel cam filmi uygulaması.",
           },
         },
         {
@@ -153,6 +153,38 @@ export default function StructuredData() {
             "@type": "Service",
             name: "Seramik Kaplama",
             description: "Aracınızın boyasına uzun süreli parlaklık ve koruma sağlayan seramik kaplama uygulaması.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Pasta Cila",
+            description: "Aracınızın boyasını canlandıran, çizikleri gideren profesyonel pasta cila uygulaması.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Boyasız Göçük Düzeltme",
+            description: "Aracınızın orijinal boyasını bozmadan uygulanan profesyonel göçük düzeltme (PDR) işlemi.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Detaylı Araç Temizliği (Familya)",
+            description: "Aracınızın iç mekanında hijyen sağlayan kapsamlı detaylı temizlik ve familya uygulaması.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "VIP Oto Yıkama",
+            description: "Aracınıza özel, standartların ötesinde özenli ve detaylı VIP oto yıkama hizmeti.",
           },
         },
         {

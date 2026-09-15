@@ -5,12 +5,13 @@ import { Circle } from "lucide-react"
 import { siteConfig } from "@/lib/config/site"
 
 const services = [
-  { id: 1, title: "Cam Filmi Uygulaması" },
-  { id: 2, title: "PPF Kaplama" },
-  { id: 3, title: "Seramik Kaplama" },
-  { id: 4, title: "Renkli Kaplama" },
-  { id: 5, title: "Krom Kaplama" },
-  { id: 6, title: "Çekici Hizmeti" },
+  { id: 1, title: "Cam Filmi", href: "/hizmetler/cam-filmi" },
+  { id: 2, title: "Şeffaf PPF Kaplama", href: "/hizmetler/ppf-kaplama" },
+  { id: 3, title: "Pasta Cila", href: "/hizmetler/pasta-cila" },
+  { id: 4, title: "Seramik Kaplama", href: "/hizmetler/seramik-kaplama" },
+  { id: 5, title: "Boyasız Göçük Düzeltme", href: "/hizmetler/boyasiz-gocuk-duzeltme" },
+  { id: 6, title: "Detaylı Temizlik (Familya)", href: "/hizmetler/detayli-arac-temizligi" },
+  { id: 7, title: "VIP Oto Yıkama", href: "/hizmetler/vip-oto-yikama" },
 ]
 
 export default function Footer() {
@@ -110,7 +111,7 @@ export default function Footer() {
               {services.map((service) => (
                 <li key={service.id} className="flex items-center gap-2">
                   <Circle className="h-3 w-3 fill-primary text-primary" />
-                  <Link href="/hizmetler" className="text-muted-foreground hover:text-primary">
+                  <Link href={service.href} className="text-muted-foreground hover:text-primary">
                     {service.title}
                   </Link>
                 </li>

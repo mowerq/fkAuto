@@ -90,14 +90,6 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={inter.className}>
-        <noscript>
-          <div style={{ padding: "2rem", textAlign: "center" }}>
-            <h1>FK Auto - Araç Estetik Merkezi | Samsun</h1>
-            <p>Profesyonel araç kaplama hizmetleri: Cam filmi, pasta cila, şeffaf PPF kaplama, familya, boyasız göçük, vip yıkama, seramik kaplama, renkli kaplama, krom kaplama.</p>
-            <p>Adres: Derebahçe, Gümüşeşik Sk No:3, 55060 İlkadım/Samsun</p>
-            <p>Telefon: <a href="tel:+905055040055">0505 504 00 55</a></p>
-          </div>
-        </noscript>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

@@ -24,11 +24,10 @@ export default function Hero() {
             <Image src="/logo.png" alt="FK Auto Logo" width={300} height={150} className="w-full h-auto" />
           </div>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl dark:text-white">
-            <span className="text-primary">Araç Estetik</span> Merkezi
+            FK Auto <span className="text-primary">Araç Estetik</span> Merkezi
           </h1>
           <p className="mb-8 text-lg text-gray-300 md:text-xl dark:text-gray-300">
-            Aracınızı profesyonel kaplama ve estetik hizmetlerimizle dönüştürün. Özel tasarımlar, renk değişimleri ve
-            koruma filmleri uzman montajıyla.
+            Samsun'da profesyonel araç kaplama ve estetik hizmetleri. Şeffaf PPF kaplama, cam filmi, pasta cila, boyasız göçük düzeltme, detaylı araç temizliği ve VIP oto yıkama uygulamaları.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="#gallery"><Button size="lg" className="w-full sm:w-auto">
