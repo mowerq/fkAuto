@@ -4,16 +4,16 @@ import Testimonials from "@/components/testimonials"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Müşteri Yorumları | FK Auto Araç Kaplama",
+  title: "Müşteri Yorumları | FK Auto Samsun",
   description:
-    "FK Auto müşterilerinin araç kaplama deneyimleri ve yorumları. Samsun'da güvenilir araç kaplama hizmeti için müşterilerimizin memnuniyet görüşlerini okuyun.",
+    "Samsun'da araç kaplama ve estetik hizmeti alan müşterilerimizin gerçek deneyimleri. FK Auto'nun güvenilir ve kaliteli hizmet anlayışını yorumlardan okuyun.",
   alternates: {
     canonical: "https://www.fkautosamsun.com/yorumlar",
   },
   openGraph: {
-    title: "Müşteri Yorumları | FK Auto Araç Kaplama - Samsun",
+    title: "Müşteri Yorumları | FK Auto Samsun",
     description:
-      "FK Auto müşterilerinin araç kaplama deneyimleri. Samsun'da güvenilir araç kaplama hizmeti.",
+      "Samsun'da araç kaplama ve estetik hizmeti alan müşterilerimizin gerçek deneyimleri.",
     url: "https://www.fkautosamsun.com/yorumlar",
   },
 }

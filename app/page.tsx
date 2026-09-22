@@ -11,16 +11,16 @@ import About from "@/components/about"
 import VisitorCounter from "@/components/visitor-counter"
 
 export const metadata: Metadata = {
-  title: "FK Auto | Samsun Araç Kaplama, Cam Filmi, PPF ve Seramik Kaplama",
+  title: "Samsun Araç Kaplama & Estetik Merkezi | FK Auto",
   description:
-    "Samsun'da profesyonel araç kaplama hizmetleri. Cam filmi, pasta cila, şeffaf PPF kaplama, familya, boyasız göçük, vip yıkama ve seramik kaplama. FK Auto Araç Estetik Merkezi, İlkadım/Samsun.",
+    "Samsun İlkadım'da garantili PPF, cam filmi, seramik kaplama ve pasta cila hizmetleri. Aracınıza değer katan profesyonel estetik merkezi FK Auto.",
   alternates: {
     canonical: "https://www.fkautosamsun.com",
   },
   openGraph: {
-    title: "FK Auto | Samsun Araç Kaplama, Cam Filmi, PPF ve Seramik Kaplama",
+    title: "Samsun Araç Kaplama & Estetik Merkezi | FK Auto",
     description:
-      "Samsun'da profesyonel araç kaplama hizmetleri. Cam filmi, pasta cila, şeffaf PPF, boyasız göçük, vip yıkama, seramik kaplama ve daha fazlası.",
+      "Samsun İlkadım'da garantili PPF, cam filmi, seramik kaplama ve pasta cila hizmetleri. Profesyonel araç estetiği.",
     url: "https://www.fkautosamsun.com",
   },
 }

@@ -102,6 +102,11 @@ export default function Footer() {
                   İletişim
                 </Link>
               </li>
+              <li>
+                <Link href="/blog" className="text-muted-foreground hover:text-primary">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
 

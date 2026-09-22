@@ -10,6 +10,7 @@ interface GalleryItem {
   title: string
   image_url: string
   description: string
+  altText: string
 }
 
 export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
@@ -28,6 +29,7 @@ export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
       title: "Mercedes",
       image_url: "/mercedes.jpg",
       description: "Kapı direkleri şeffaf PPF kaplama, Seramik kaplama, 3 aşamalı pasta cila, Demir tozu, Kil, Detaylı ön yıkama",
+      altText: "Samsun FK Auto - Mercedes Komple Şeffaf PPF Kaplama ve Seramik Boya Koruma Uygulaması",
     },
     {
       id: 2,
@@ -35,6 +37,7 @@ export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
       title: "BMW",
       image_url: "/bmw.jpg",
       description: "Pasta cila, Fireball seramik kaplama, Demir tozu, Kil, Detaylı ön yıkama",
+      altText: "Samsun Araç Estetik - BMW Çizik Giderme Pasta Cila ve Fireball Seramik Kaplama",
     },
     {
       id: 3,
@@ -42,6 +45,7 @@ export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
       title: "Honda",
       image_url: "/honda.jpg",
       description: "Farlar , stoplar şeffaf PPF kaplama, Fireball seramik wax, Detaylı ön yıkama",
+      altText: "Samsun İlkadım FK Auto - Honda Far PPF Kaplama ve Fireball Seramik Wax Boya Koruma",
     },
     {
       id: 4,
@@ -49,6 +53,7 @@ export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
       title: "Ford",
       image_url: "/ford.jpg",
       description: "Komple şeffaf PPF kaplama, Kaplama öncesi pasta cila yüzey düzeltme, Demir tozu, Kil, Detaylı ön yıkama",
+      altText: "Samsun Araç Kaplama - Ford Yüzey Düzeltme Pasta Cila ve Kusursuz Şeffaf PPF Kaplama",
     },
     {
       id: 5,
@@ -56,6 +61,7 @@ export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
       title: "Peugeot",
       image_url: "/peugeot.jpg",
       description: "Pasta cila ( Boya koruma ), Demir tozu, Kil, Detaylı ön yıkama",
+      altText: "Samsun Oto Kuaför FK Auto - Peugeot Boya Koruma, Pasta Cila ve Detaylı Temizlik",
     },
     {
       id: 6,
@@ -63,6 +69,7 @@ export default function Gallery({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
       title: "Yamaha",
       image_url: "/yamaha.jpg",
       description: "Pasta cila ( Boya koruma ), Fireball wax",
+      altText: "Samsun Motosiklet Boya Koruma - Yamaha Pasta Cila ve Fireball Wax Uygulaması",
     },
   ]
 
@@ -119,7 +126,7 @@ function GalleryItem({ item }: { item: GalleryItem }) {
         <div className="relative aspect-video overflow-hidden">
           <Image
             src={item.image_url || "/placeholder.svg"}
-            alt={`${item.title} - ${item.description} | FK Auto Samsun`}
+            alt={item.altText || `${item.title} - ${item.description} | FK Auto Samsun`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="lazy"

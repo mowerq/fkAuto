@@ -3,10 +3,10 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "AutoBodyShop",
     "@id": "https://www.fkautosamsun.com/#organization",
-    name: "FK Auto - Araç Kaplama Merkezi",
+    name: "FK Auto Araç Estetik Merkezi",
     image: "https://www.fkautosamsun.com/logo.png",
     url: "https://www.fkautosamsun.com",
-    telephone: "+90 505 504 00 55",
+    telephone: "0505 504 00 55",
     email: "farukalayci55@hotmail.com",
     address: {
       "@type": "PostalAddress",

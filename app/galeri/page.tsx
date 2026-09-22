@@ -4,16 +4,16 @@ import Gallery from "@/components/gallery"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Galeri | Araç Kaplama Çalışmalarımız",
+  title: "Galeri | Samsun PPF ve Seramik Kaplama Örnekleri",
   description:
-    "FK Auto tarafından tamamlanan araç kaplama projelerini inceleyin. Cam filmi, PPF, seramik kaplama, renkli kaplama ve krom kaplama çalışmalarımızın fotoğrafları. Samsun araç kaplama örnekleri.",
+    "Samsun'da tamamladığımız premium PPF kaplama, cam filmi ve seramik uygulama projelerimizi inceleyin. Kusursuz işçilik detaylarımız galerimizde.",
   alternates: {
     canonical: "https://www.fkautosamsun.com/galeri",
   },
   openGraph: {
-    title: "Galeri | FK Auto Araç Kaplama Çalışmaları - Samsun",
+    title: "Galeri | Samsun PPF ve Seramik Kaplama Örnekleri",
     description:
-      "FK Auto araç kaplama projelerini inceleyin. Cam filmi, PPF, seramik, renkli ve krom kaplama çalışma örnekleri.",
+      "Samsun'da tamamladığımız premium PPF kaplama, cam filmi ve seramik uygulama projelerimizi inceleyin.",
     url: "https://www.fkautosamsun.com/galeri",
   },
 }

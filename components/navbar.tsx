@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/galeri", label: "Galeri" },
   { href: "/yorumlar", label: "Yorumlar" },
   { href: "/iletisim", label: "İletişim" },
+  { href: "/blog", label: "Blog" },
 ]
 
 export default function Navbar() {
