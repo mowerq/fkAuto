@@ -36,9 +36,9 @@ export const blogPosts: BlogPost[] = [
       <p>Piyasada farklı kalite standartlarında kaplama filmleri bulunmaktadır. Ucuz PVC filmler 1-2 yıl içinde sararma yapıp çatlayabilirken, FK Auto'da uyguladığımız premium <strong>TPU PPF kaplama ömrü</strong> kullanım koşullarına ve bakıma bağlı olarak 5 ila 10 yıl arasında değişmektedir. Filmin ömrünü uzatmak için aracınızı kostiksiz ve pH nötr şampuanlarla yıkatmanız, fırçalı oto yıkamalardan uzak durmanız tavsiye edilir.</p>
 
       <h2>Samsun İlkadım Araç Kaplama Fiyatları</h2>
-      <p>Samsun'da PPF kaplama fiyatları; kaplanacak alanın büyüklüğüne (sadece kaput, ön üçlü (kaput, çamurluklar, tampon) veya komple araç), kullanılan filmin kalitesine (PVC vs. TPU), kalınlığına (mikron değeri) ve işçilik kalitesine göre büyük farklılıklar gösterir. <strong>İlkadım araç kaplama fiyatları</strong> konusunda araştırma yaparken, fiyat kadar kullanılacak malzemenin garanti süresine ve uygulayıcı firmanın tecrübesine de dikkat etmelisiniz. Kalitesiz bir film ve kötü bir işçilik, ileride filmi sökerken orijinal boyanıza zarar verebilir. Bu nedenle FK Auto gibi profesyonel ve güvenilir merkezleri tercih etmek her zaman en iyi yatırımdır.</p>
+      <p>Samsun'da PPF kaplama fiyatları; kaplanacak alanın büyüklüğüne (sadece kaput, ön üçlü veya komple araç), kullanılan filmin kalitesine (PVC vs. TPU), kalınlığına ve işçilik kalitesine göre değişmektedir. <strong>Güncel fiyat bilgisi almak için doğrudan FK Auto ile iletişime geçebilirsiniz.</strong> İlkadım araç kaplama işlemlerinde araştırma yaparken, fiyat kadar kullanılacak malzemenin garanti süresine ve uygulayıcı firmanın tecrübesine de dikkat etmelisiniz. Kalitesiz bir film ve kötü bir işçilik, ileride filmi sökerken orijinal boyanıza zarar verebilir. Bu nedenle FK Auto gibi profesyonel ve güvenilir merkezleri tercih etmek her zaman en iyi yatırımdır.</p>
 
-      <p>Siz de aracınızı Samsun'un zorlu yol koşullarına karşı korumak ve yıllarca ilk günkü parlaklığıyla kullanmak istiyorsanız, FK Auto Araç Estetik Merkezi'ne gelerek profesyonel PPF kaplama çözümlerimiz hakkında detaylı bilgi ve fiyat teklifi alabilirsiniz.</p>
+      <p>Siz de aracınızı Samsun'un zorlu yol koşullarına karşı korumak ve yıllarca ilk günkü parlaklığıyla kullanmak istiyorsanız, detaylı bilgi ve güncel fiyat teklifi için lütfen FK Auto Araç Estetik Merkezi ile iletişime geçin.</p>
     `
   },
   {
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Aracınıza cam filmi taktırmadan önce bilmeniz gerekenler: Kalite standartları, TÜVTÜRK muayene kuralları ve ısı yalıtımlı filmlerin avantajları.",
     date: "2024-07-10",
     author: "Faruk Kalaycı",
-    image: "https://images.unsplash.com/photo-1549643194-e0b04c86175b?q=80&w=2072&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop",
     content: `
       <p>Özellikle yaz aylarında güneşin kavurucu etkisinden korunmak, araç içi mahremiyeti sağlamak ve otomobile daha estetik, sportif bir görünüm kazandırmak için araç sahiplerinin ilk başvurduğu uygulamalardan biri cam filmidir. Ancak cam filmi seçimi sadece "ne kadar koyu olsun" sorusundan ibaret değildir. Yanlış film seçimi gece sürüş güvenliğinizi tehlikeye atabilir, muayeneden kalmanıza sebep olabilir veya beklediğiniz ısı korumasını sağlamayabilir. FK Auto olarak, aracınız için en doğru cam filmini seçerken dikkat etmeniz gereken hayati noktaları derledik.</p>
 
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
       <p>Özetle; <strong>Samsun cam filmi yasal sınır</strong> kurallarına uygun, sürüş güvenliğini tehlikeye atmayan tonları seçmek, hem ceza yememek hem de muayene istasyonlarında sorun yaşamamak için kritik öneme sahiptir.</p>
 
       <h2>Sadece Renk Değil, İşlevsellik: Isı Yalıtımlı Cam Filmi</h2>
-      <p>Piyasada 500 TL'ye de 5000 TL'ye de cam filmi bulabilirsiniz. Aradaki bu devasa fiyat farkının ana nedeni filmin kalitesi ve sunduğu teknolojidir. Ucuz boyalı filmler (dyed films) sadece camı karartır; güneşi ve sıcaklığı kesmez. Aksine içeride hapsedilen ısı nedeniyle araç içi daha da bunaltıcı olabilir. Ayrıca bu filmler 1-2 yıl içinde morarır, solar ve baloncuklanma yapar.</p>
+      <p>Piyasada çok farklı fiyat aralıklarında cam filmi bulabilirsiniz. Güncel fiyat bilgisi ve aracınıza en uygun seçenekler için FK Auto ile iletişime geçebilirsiniz. Cam filmleri arasındaki kalite farkının ana nedeni kullanılan malzeme ve sunduğu teknolojidir. Ucuz boyalı filmler (dyed films) sadece camı karartır; güneşi ve sıcaklığı kesmez. Aksine içeride hapsedilen ısı nedeniyle araç içi daha da bunaltıcı olabilir. Ayrıca bu filmler 1-2 yıl içinde morarır, solar ve baloncuklanma yapar.</p>
       
       <p>Gerçek bir konfor istiyorsanız tercihiniz kesinlikle <strong>ısı yalıtımlı cam filmi</strong> (seramik veya metalize filmler) olmalıdır. Bu üst düzey filmlerin avantajları şunlardır:</p>
       <ul>
